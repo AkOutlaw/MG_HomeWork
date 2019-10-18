@@ -19,21 +19,21 @@ for i in range(len(listOfProducts)): # print added list of products
     print(listOfProducts[i])
 
 print()
+s = 999
+while s != 0:
+    s = int(input('Set id of product to change! Set 0 to exit: '))   # item to change, if 0 exit
+    if s == 0:
+        quit()
 
-s = int(input('Set id of product to change! Set 0 to exit: '))   # item to change, if 0 exit
-if s == 0:
-    quit()
+    print()
 
-print()
+    tempProduct = listOfProducts[s-1]
+    tempProduct['count'] = int(input('Set new product count: '))
+    tempProduct['price'] = int(input('Set new price count: '))
+    listOfProducts.remove(listOfProducts[s-1])
+    listOfProducts.insert(s-1, tempProduct)
 
-tempProduct = listOfProducts[s-1]
-tempProduct['count'] = int(input('Set new product count: '))
-tempProduct['price'] = int(input('Set new price count: '))
-listOfProducts.remove(listOfProducts[s-1])
-listOfProducts.insert(s-1, tempProduct)
-
-print('Here is updated list of products')
-print()
-for i in range(len(listOfProducts)):
-    print(listOfProducts[i])
-
+    print('Here is updated list of products')
+    print()
+    for i in range(len(listOfProducts)):
+        print(listOfProducts[i])
