@@ -23,39 +23,32 @@ for i in range(3):
 
     figuresList.append(figure)
 
-choice2 = input('Which parameter will be calculated: perimeter(p) or square(s): ')
-
 
 maxS = 0
 maxP = 0
 
-listSquares = []
-listPerimeters = []
-
-vocSq = {}
-vocPer = {}
+maxSType = ''
+maxPType = ''
 
 for i in figuresList:
     s = i.getSquare()
-    vocSq[i] = s
-    listSquares.append(vocSq)
 
     p = i.getPerimeter()
-    vocPer[i] = p
-    listPerimeters.append(vocPer)
 
     if maxS < s:
         maxS = s
-        figWithMaxSquare = i
+        maxSType = i.getName()
     if maxP < p:
         maxP = p
-        figWithMaxPerimeter = i
+        maxPType = i.getName()
 
-choice3 = input('Input number of figure')
-print(listSquares)
-print(listPerimeters)
-# if choice2 == 's':
-#     print('Square is %4s; figure: %4s' % (maxS, type(figWithMaxSquare)))
-# elif choice2 == 'p':
-#     print('Square is %4s; figure: %4s' % (maxP, type(figWithMaxPerimeter)))
+choice2 = input('Select parameter for calculation: Square(s) or Perimeter(p): ')
 
+if choice2 == 's':
+    print('Max square is %4s; figure: %4s' % (maxS, maxPType))
+elif choice2 == 'p':
+    print('Max Perometer is %4s; figure: %4s' % (maxP, maxPType))
+else:
+    print('invalid input \n')
+    print('Max square is %4s; figure: %4s' % (maxS, maxPType))
+    print('Max Perometer is %4s; figure: %4s' % (maxP, maxPType))
