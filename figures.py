@@ -13,6 +13,9 @@ class Circle:
         p = 2 * math.pi * self.r
         return p
 
+    def getName(self):
+        return 'Circle'
+
 class Rectangle:
     def __init__(self, a, b):
         self.a = a
@@ -23,6 +26,9 @@ class Rectangle:
 
     def getPerimeter(self):
         return (self.a + self.b) * 2
+
+    def getName(self):
+        return 'Rectangle'
 
 class Triangle:
     def __init__(self, a, b, c):
@@ -36,3 +42,6 @@ class Triangle:
 
     def getPerimeter(self):
         return (self.a + self.b + self.c) / 2
+
+    def getName(self):
+        return 'Triangle'
