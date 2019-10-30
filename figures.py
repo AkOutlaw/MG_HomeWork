@@ -41,7 +41,7 @@ class Triangle:
         return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
 
     def getPerimeter(self):
-        return (self.a + self.b + self.c) / 2
+        return (self.a + self.b + self.c)
 
     def getName(self):
         return 'Triangle'
